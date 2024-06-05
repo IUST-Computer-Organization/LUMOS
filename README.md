@@ -9,4 +9,14 @@ The processor is designed with modularity in mind, allowing students to work on 
 
 This processor core is synthesizable in the 45nm technology node. LUMOS has gone through the RTL-to-GDS flow using Synopsys Design Compiler and Cadence Encounter. At this node, the core can achieve a frequency of 500Mhz while occupying 12000 um2 of area and consuming around 3mWatts of power.
 
-![Alt text](https://github.com/IUST-Computer-Organization/LUMOS/blob/main/LUMOS.png "The LUMOS microprocessor synthesized with Design Compiler and placed and routed by Cadence Encounter" =300x300) 
+<!-- ![Alt text](https://github.com/IUST-Computer-Organization/LUMOS/blob/main/LUMOS.png "The LUMOS microprocessor synthesized with Design Compiler and placed and routed by Cadence Encounter" =300x300)  -->
+
+<picture>
+    <img 
+        alt="The LUMOS microprocessor synthesized with Design Compiler and placed and routed by Cadence Encounter" 
+        src="https://github.com/IUST-Computer-Organization/LUMOS/blob/main/LUMOS.png" 
+        width="550" 
+        height="550" 
+        style="vertical-align:middle"
+    > 
+</picture> 
