@@ -1,0 +1,267 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Jun 05 21:32:40 2024
+[*]
+[dumpfile] "D:\GitHub\IUST-Computer-Organization\LUMOS\LUMOS.vcd"
+[dumpfile_mtime] "Wed Jun 05 21:31:51 2024"
+[dumpfile_size] 965539
+[savefile] "D:\GitHub\IUST-Computer-Organization\LUMOS\LUMOS.gtkw"
+[timestart] 23288
+[size] 1920 1009
+[pos] -1 -1
+*-6.945527 23807 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] LUMOS_Testbench.
+[treeopen] LUMOS_Testbench.uut.
+[sst_width] 197
+[signals_width] 441
+[sst_expanded] 1
+[sst_vpaned_height] 297
+@28
+LUMOS_Testbench.uut.clk
+LUMOS_Testbench.uut.reset
+@200
+-
+----Controller State--
+@24
+LUMOS_Testbench.uut.state[4:0]
+LUMOS_Testbench.uut.nextState[4:0]
+@200
+-
+@28
+LUMOS_Testbench.uut.irWrite
+@22
+LUMOS_Testbench.uut.ir[31:0]
+@200
+-
+@28
+LUMOS_Testbench.uut.pcWrite
+@22
+LUMOS_Testbench.uut.pc[31:0]
+@200
+-
+----Memory Signals---
+@28
+LUMOS_Testbench.uut.instructionOrData
+@22
+LUMOS_Testbench.uut.memoryAddress[31:0]
+LUMOS_Testbench.uut.memoryData[31:0]
+@28
+LUMOS_Testbench.uut.memoryReadWrite
+LUMOS_Testbench.uut.memoryEnable
+LUMOS_Testbench.uut.memoryReady
+@200
+-
+----Decode---
+@22
+LUMOS_Testbench.uut.opcode[6:0]
+@28
+LUMOS_Testbench.uut.funct3[2:0]
+@22
+LUMOS_Testbench.uut.funct7[6:0]
+LUMOS_Testbench.uut.immediate[31:0]
+@200
+-
+----Integer Register File---
+@22
+LUMOS_Testbench.uut.readData1[31:0]
+LUMOS_Testbench.uut.RS1[31:0]
+LUMOS_Testbench.uut.readData2[31:0]
+LUMOS_Testbench.uut.RS2[31:0]
+@200
+-
+@28
+LUMOS_Testbench.uut.registerWriteEnable
+LUMOS_Testbench.uut.registerWriteSource[1:0]
+@200
+-
+----Fixed Point Register File---
+@40000024
+[fpshift_count] 10
+LUMOS_Testbench.uut.fixedPointReadData1[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.uut.FRS1[31:0]
+@40000025
+[fpshift_count] 10
+LUMOS_Testbench.uut.fixedPointReadData2[31:0]
+@40000024
+[fpshift_count] 10
+LUMOS_Testbench.uut.writeData[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.uut.FRS2[31:0]
+@200
+-
+@28
+LUMOS_Testbench.uut.fixedPointRegisterWriteEnable
+LUMOS_Testbench.uut.fixedPointRegisterWriteSource[1:0]
+@22
+LUMOS_Testbench.uut.fixedPointWriteData[31:0]
+@200
+-
+----FPU Signals---
+@28
+LUMOS_Testbench.uut.fpuOperation[1:0]
+LUMOS_Testbench.uut.fpuReady
+@40000024
+[fpshift_count] 10
+LUMOS_Testbench.uut.fpuResult[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.uut.fpuResultRegister[31:0]
+@200
+-
+----ALU Signals---
+@420
+LUMOS_Testbench.uut.aluOperand1[31:0]
+@c00420
+LUMOS_Testbench.uut.aluOperand2[31:0]
+@28
+(0)LUMOS_Testbench.uut.aluOperand2[31:0]
+(1)LUMOS_Testbench.uut.aluOperand2[31:0]
+(2)LUMOS_Testbench.uut.aluOperand2[31:0]
+(3)LUMOS_Testbench.uut.aluOperand2[31:0]
+(4)LUMOS_Testbench.uut.aluOperand2[31:0]
+(5)LUMOS_Testbench.uut.aluOperand2[31:0]
+(6)LUMOS_Testbench.uut.aluOperand2[31:0]
+(7)LUMOS_Testbench.uut.aluOperand2[31:0]
+(8)LUMOS_Testbench.uut.aluOperand2[31:0]
+(9)LUMOS_Testbench.uut.aluOperand2[31:0]
+(10)LUMOS_Testbench.uut.aluOperand2[31:0]
+(11)LUMOS_Testbench.uut.aluOperand2[31:0]
+(12)LUMOS_Testbench.uut.aluOperand2[31:0]
+(13)LUMOS_Testbench.uut.aluOperand2[31:0]
+(14)LUMOS_Testbench.uut.aluOperand2[31:0]
+(15)LUMOS_Testbench.uut.aluOperand2[31:0]
+(16)LUMOS_Testbench.uut.aluOperand2[31:0]
+(17)LUMOS_Testbench.uut.aluOperand2[31:0]
+(18)LUMOS_Testbench.uut.aluOperand2[31:0]
+(19)LUMOS_Testbench.uut.aluOperand2[31:0]
+(20)LUMOS_Testbench.uut.aluOperand2[31:0]
+(21)LUMOS_Testbench.uut.aluOperand2[31:0]
+(22)LUMOS_Testbench.uut.aluOperand2[31:0]
+(23)LUMOS_Testbench.uut.aluOperand2[31:0]
+(24)LUMOS_Testbench.uut.aluOperand2[31:0]
+(25)LUMOS_Testbench.uut.aluOperand2[31:0]
+(26)LUMOS_Testbench.uut.aluOperand2[31:0]
+(27)LUMOS_Testbench.uut.aluOperand2[31:0]
+(28)LUMOS_Testbench.uut.aluOperand2[31:0]
+(29)LUMOS_Testbench.uut.aluOperand2[31:0]
+(30)LUMOS_Testbench.uut.aluOperand2[31:0]
+(31)LUMOS_Testbench.uut.aluOperand2[31:0]
+@1401200
+-group_end
+@22
+LUMOS_Testbench.uut.aluOperation[3:0]
+@200
+-
+@420
+LUMOS_Testbench.uut.aluResult[31:0]
+@22
+LUMOS_Testbench.uut.aluResultRegister[31:0]
+@28
+LUMOS_Testbench.uut.aluZeroRegister
+LUMOS_Testbench.uut.aluZeroRegister
+@200
+-
+----Integer Registers---
+@22
+LUMOS_Testbench.x0_zero[31:0]
+LUMOS_Testbench.x1_ra[31:0]
+LUMOS_Testbench.x2_sp[31:0]
+LUMOS_Testbench.x3_gp[31:0]
+LUMOS_Testbench.x4_tp[31:0]
+LUMOS_Testbench.x5_t0[31:0]
+LUMOS_Testbench.x6_t1[31:0]
+LUMOS_Testbench.x7_t2[31:0]
+LUMOS_Testbench.x8_s0[31:0]
+LUMOS_Testbench.x9_s1[31:0]
+LUMOS_Testbench.x10_a0[31:0]
+LUMOS_Testbench.x11_a1[31:0]
+LUMOS_Testbench.x12_a2[31:0]
+LUMOS_Testbench.x13_a3[31:0]
+LUMOS_Testbench.x14_a4[31:0]
+LUMOS_Testbench.x15_a5[31:0]
+LUMOS_Testbench.x16_a6[31:0]
+LUMOS_Testbench.x17_a7[31:0]
+LUMOS_Testbench.x18_s2[31:0]
+LUMOS_Testbench.x19_s3[31:0]
+LUMOS_Testbench.x20_s4[31:0]
+LUMOS_Testbench.x21_s5[31:0]
+LUMOS_Testbench.x22_s6[31:0]
+LUMOS_Testbench.x23_s7[31:0]
+LUMOS_Testbench.x24_s8[31:0]
+LUMOS_Testbench.x25_s9[31:0]
+LUMOS_Testbench.x26_s10[31:0]
+LUMOS_Testbench.x27_s11[31:0]
+LUMOS_Testbench.x28_t3[31:0]
+LUMOS_Testbench.x29_t4[31:0]
+LUMOS_Testbench.x30_t5[31:0]
+LUMOS_Testbench.x31_t6[31:0]
+@200
+-
+----Fixed Point Registers---
+@40000024
+[fpshift_count] 10
+LUMOS_Testbench.f0[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f1[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f2[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f3[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f4[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f5[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f6[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f7[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f8[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f9[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f10[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f11[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f12[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f13[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f14[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f15[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f16[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f17[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f18[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f19[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f20[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f21[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f22[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f23[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f24[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f25[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f26[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f27[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f28[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f29[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f30[31:0]
+[fpshift_count] 10
+LUMOS_Testbench.f31[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
