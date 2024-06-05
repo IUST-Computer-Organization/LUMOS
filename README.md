@@ -17,6 +17,6 @@ This processor core is synthesizable in the 45nm technology node. LUMOS has gone
         src="https://github.com/IUST-Computer-Organization/LUMOS/blob/main/LUMOS.png" 
         width="550" 
         height="550" 
-        style="vertical-align:middle"
+        style="horizontal-align:middle"
     > 
 </picture> 
