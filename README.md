@@ -16,7 +16,6 @@ This processor core is synthesizable in the 45nm technology node. LUMOS has gone
         alt="The LUMOS microprocessor synthesized with Design Compiler and placed and routed by Cadence Encounter" 
         src="https://github.com/IUST-Computer-Organization/LUMOS/blob/main/LUMOS.png" 
         width="550" 
-        height="550" 
-        style="horizontal-align:middle"
+        height="550"
     > 
 </picture> 
