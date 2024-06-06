@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Mon Jun 03 13:58:52 2024
+[*]
+[dumpfile] "D:\GitHub\IUST-Computer-Organization\LUMOS\Fixed_Point_Unit.vcd"
+[dumpfile_mtime] "Mon Jun 03 13:56:16 2024"
+[dumpfile_size] 6456
+[savefile] "D:\GitHub\IUST-Computer-Organization\LUMOS\Fixed_Point_Unit.gtkw"
+[timestart] 0
+[size] 1920 1009
+[pos] -1 -1
+*-4.605382 156 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Fixed_Point_Unit_Testbench.
+[sst_width] 42
+[signals_width] 306
+[sst_expanded] 0
+[sst_vpaned_height] 297
+@28
+Fixed_Point_Unit_Testbench.clk
+Fixed_Point_Unit_Testbench.reset
+@200
+-
+@29
+Fixed_Point_Unit_Testbench.operation[1:0]
+@200
+-
+@40000024
+[fpshift_count] 10
+Fixed_Point_Unit_Testbench.operand_1[31:0]
+[fpshift_count] 10
+Fixed_Point_Unit_Testbench.operand_2[31:0]
+@200
+-
+@40000024
+[fpshift_count] 10
+Fixed_Point_Unit_Testbench.fpu_result[31:0]
+@28
+Fixed_Point_Unit_Testbench.fpu_ready
+[pattern_trace] 1
+[pattern_trace] 0
