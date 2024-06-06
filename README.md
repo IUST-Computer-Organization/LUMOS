@@ -1,4 +1,5 @@
-# LUMOS RISC-V
+<img src="https://github.com/IUST-Computer-Organization/.github/blob/main/images/CompOrg_orange.png" alt="Image" width="85" height="85" style="vertical-align:middle"> LUMOS RISC-V
+
 > Light Utilization with Multicycle Operational Stages (LUMOS) RISC-V Processor Core
 
 <div align="justify">
@@ -17,7 +18,7 @@ This processor core is synthesizable in the 45nm CMOS technology node. LUMOS has
 <picture>
     <img 
         alt="The LUMOS microprocessor synthesized with Design Compiler and placed and routed by Cadence Encounter" 
-        src="https://github.com/IUST-Computer-Organization/LUMOS/blob/main/LUMOS.png" 
+        src="https://github.com/IUST-Computer-Organization/.github/blob/main/images/LUMOS.png" 
         width="550" 
         height="550"
     > 
