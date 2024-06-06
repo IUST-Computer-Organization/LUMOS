@@ -4,11 +4,17 @@
 
 <div align="justify">
 
+## Introduction
+
 **LUMOS** is a multicycle RISC-V processor that implements a subset of `RV32I` instruction set, designed for educational use in computer organization classes at **Iran University of Science and Technology**. It allows for modular design projects, enabling students to gain hands-on experience with processor architecture.
 
-LUMOS executes instructions in multiple stages, such as `instruction_fetch`, `fetch_wait`, `fetch_done`, `decode`, `execute`, `memory_access`, and etc. This approach allows for more complex operations and better utilization of processor resources compared to single-cycle designs. This processor does not support the entire `RV32I` instruction set, which is the base integer instruction set of RISC-V. Instead, it focuses on a subset of instructions that are essential for educational purposes and demonstrating the principles of computer architecture.
+## Features
 
-The processor is designed with modularity in mind, allowing students to work on various components of the processor. As part of their course projects, students will design different execution units, such as FPUs, control units, memory interfaces, and other modules that are integral to the processor's functionality.
+- LUMOS executes instructions in multiple stages, such as `instruction_fetch`, `fetch_wait`, `fetch_done`, `decode`, `execute`, `memory_access`, and etc. This approach allows for more complex operations and better utilization of processor resources compared to single-cycle designs. This processor does not support the entire `RV32I` instruction set, which is the base integer instruction set of RISC-V. Instead, it focuses on a subset of instructions that are essential for educational purposes and demonstrating the principles of computer architecture.
+
+- The processor is designed with modularity in mind, allowing students to work on various components of the processor. As part of their course projects, students will design different execution units, such as FPUs, control units, memory interfaces, and other modules that are integral to the processor's functionality.
+
+## Synthesis
 
 This processor core is synthesizable in the 45nm CMOS technology node. LUMOS has gone through the RTL-to-GDS flow using *Synopsys Design Compiler* and *Cadence SoC Encounter* tools. At this node, the core can achieve a frequency of **500MHz** while occupying **12000um2** of area and consuming around **3mw** of power.
 </div>
@@ -25,8 +31,10 @@ This processor core is synthesizable in the 45nm CMOS technology node. LUMOS has
 </picture> 
 
 
-Copyright 2024 Iran University of Science and Technology - iustCompOrg@gmail.com  
+## Copyright
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+
+Copyright 2024 Iran University of Science and Technology - iustCompOrg@gmail.com  
 
 </div>
