@@ -1,0 +1,89 @@
+Warning: Design 'LUMOS' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : LUMOS
+Version: C-2009.06-SP5
+Date   : Wed Jun  6 02:40:33 2018
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: ir_tri_enable_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: aluZeroRegister_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  ir_tri_enable_reg[12]/CLK (DFFPOSX1)                   0.000      0.000 r
+  ir_tri_enable_reg[12]/Q (DFFPOSX1)                     0.103      0.103 f
+  U3878/Y (INVX1)                                        0.010      0.113 r
+  ir_tri[12]/Y (TBUFX2)                                  0.057      0.170 r
+  U2892/Y (OR2X2)                                        0.050      0.220 r
+  U2782/Y (INVX1)                                        0.018      0.238 f
+  U2821/Y (MUX2X1)                                       0.041      0.279 r
+  U4415/Y (NAND3X1)                                      0.017      0.296 f
+  U3248/Y (INVX1)                                        0.001      0.296 r
+  U3249/Y (INVX1)                                        0.014      0.311 f
+  U4416/Y (AOI22X1)                                      0.038      0.349 r
+  U2910/Y (BUFX2)                                        0.035      0.384 r
+  U2895/Y (AND2X2)                                       0.033      0.417 r
+  U2211/Y (INVX2)                                        0.025      0.442 f
+  U4417/Y (NOR3X1)                                       0.060      0.502 r
+  U1852/Y (BUFX2)                                        0.038      0.540 r
+  U3871/Y (INVX1)                                        0.017      0.557 f
+  U4430/Y (AOI21X1)                                      0.017      0.574 r
+  U2730/Y (BUFX2)                                        0.054      0.628 r
+  aluOperation_tri[3]/Y (TBUFX2)                         0.085      0.713 f
+  U1383/Y (NOR3X1)                                       0.192      0.904 r
+  U3283/Y (AND2X2)                                       0.177      1.082 r
+  U2276/Y (INVX2)                                        0.116      1.197 f
+  U2088/Y (OAI21X1)                                      0.061      1.258 r
+  U1909/Y (AND2X2)                                       0.032      1.290 r
+  U1910/Y (INVX1)                                        0.015      1.305 f
+  U1978/Y (AND2X2)                                       0.037      1.342 f
+  U1979/Y (INVX1)                                       -0.002      1.339 r
+  U2087/Y (AOI21X1)                                      0.007      1.347 f
+  U1933/Y (BUFX2)                                        0.034      1.380 f
+  U2086/Y (OAI21X1)                                      0.016      1.397 r
+  U2085/Y (AOI21X1)                                      0.019      1.416 f
+  U2032/Y (BUFX2)                                        0.037      1.453 f
+  arithmetic_logic_unit/result_tri[8]/Y (TBUFX2)         0.037      1.490 r
+  U1697/Y (NOR3X1)                                       0.047      1.538 f
+  U1700/Y (NAND3X1)                                      0.041      1.579 r
+  U1704/Y (BUFX2)                                        0.036      1.615 r
+  U1709/Y (NOR3X1)                                       0.026      1.641 f
+  U1711/Y (NAND3X1)                                      0.036      1.676 r
+  U1712/Y (BUFX2)                                        0.036      1.712 r
+  U1715/Y (NOR3X1)                                       0.025      1.737 f
+  U1716/Y (NAND3X1)                                      0.041      1.778 r
+  U1717/Y (BUFX2)                                        0.036      1.814 r
+  U1720/Y (NOR3X1)                                       0.025      1.840 f
+  U1721/Y (NAND3X1)                                      0.041      1.880 r
+  U1722/Y (BUFX2)                                        0.036      1.916 r
+  U1724/Y (NOR3X1)                                       0.024      1.940 f
+  aluZeroRegister_reg/D (DFFPOSX1)                       0.000      1.940 f
+  data arrival time                                                 1.940
+
+  clock clk (rise edge)                                  2.000      2.000
+  clock network delay (ideal)                            0.000      2.000
+  aluZeroRegister_reg/CLK (DFFPOSX1)                     0.000      2.000 r
+  library setup time                                    -0.060      1.940
+  data required time                                                1.940
+  --------------------------------------------------------------------------
+  data required time                                                1.940
+  data arrival time                                                -1.940
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.000
+
+
+1

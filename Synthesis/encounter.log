@@ -1,0 +1,674 @@
+Checking out Encounter license ...
+SOC_Encounter_GXL 8.1 license checkout succeeded.
+This Encounter release has been compiled with OA version 22.04-p032.
+sourcing /opt/Cadence/SOC8.1USR3/etc/fe/rdaDSL.tcl
+*******************************************************************
+*   Copyright (c)  Cadence Design Systems, Inc.  1996 - 2008.     *
+*                     All rights reserved.                        *
+*                                                                 *
+*                                                                 *
+*                                                                 *
+* This program contains confidential and trade secret information *
+* of Cadence Design Systems, Inc. and is protected by copyright   *
+* law and international treaties.  Any reproduction, use,         *
+* distribution or disclosure of this program or any portion of it,*
+* or any attempt to obtain a human-readable version of this       *
+* program, without the express, prior written consent of          *
+* Cadence Design Systems, Inc., is strictly prohibited.           *
+*                                                                 *
+*                 Cadence Design Systems, Inc.                    *
+*                    2655 Seely Avenue                            *
+*                   San Jose, CA 95134,  USA                      *
+*                                                                 *
+*                                                                 *
+*******************************************************************
+
+@(#)CDS: First Encounter v08.10-p004_1 (32bit) 11/04/2008 14:34 (Linux 2.6)
+@(#)CDS: NanoRoute v08.10-p008 NR081027-0018/USR58-UB (database version 2.30, 67.1.1) {superthreading v1.11}
+@(#)CDS: CeltIC v08.10-p002_1 (32bit) 10/23/2008 22:04:14 (Linux 2.6.9-67.0.10.ELsmp)
+@(#)CDS: CTE v08.10-p016_1 (32bit) Oct 26 2008 15:11:51 (Linux 2.6.9-67.0.10.ELsmp)
+@(#)CDS: CPE v08.10-p009
+--- Starting "First Encounter v08.10-p004_1" on Wed Jun  6 02:41:40 2018 (mem=62.3M) ---
+--- Running on ICICVM.lab.edu (i686 w/Linux 2.6.9-78.EL) ---
+This version was compiled on Tue Nov 4 14:34:21 PST 2008.
+Set DBUPerIGU to 1000.
+Set Default Mode Total Cap Scale Factor to 1.00
+Set Detail Mode Total Cap Scale Factor to 1.00
+Set Coupling Total Cap Scale Factor to 1.00
+Set Total Res Scale Factor to 1.00
+Set net toggle Scale Factor to 1.00
+Set Shrink Factor to 1.00000
+Sourcing tcl/tk file "encounter.tcl" ...
+<CMD> loadConfig ./encounter.conf
+Reading config file - ./encounter.conf
+
+Loading Lef file /home/icic/FreePDK45/osu_soc/lib/files/gscl45nm.lef...
+**WARN: (SOCLF-155):	ViaRule only supports routing/cut layer, but poly layer found for viaRule 'M1_POLY', 
+Set DBUPerIGU to M2 pitch 380.
+Initializing default via types and wire widths ...
+
+Power Planner/ViaGen version 8.1.45 promoted on 09/01/2008.
+viaInitial starts at Wed Jun  6 02:41:41 2018
+**WARN: (SOCPP-547):	Cut 'contact' does not fit in viaRule 'M1_POLY'.
+viaInitial ends at Wed Jun  6 02:41:41 2018
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist 'LUMOS.vh'
+Module Fixed_Point_Unit not defined.  Created automatically.
+**WARN: (SOCVL-346):	Module Fixed_Point_Unit is not defined in LEF files.  It will be treated as an empty module.
+Undeclared bus operand_1 in module Fixed_Point_Unit ... created as [31:0].
+Undeclared bus operand_2 in module Fixed_Point_Unit ... created as [31:0].
+Undeclared bus operation in module Fixed_Point_Unit ... created as [1:0].
+Undeclared bus result in module Fixed_Point_Unit ... created as [31:0].
+
+*** Memory Usage v0.144 (Current mem = 196.371M, initial mem = 62.277M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=196.4M) ***
+Set top cell to LUMOS.
+Reading common timing library '/home/icic/FreePDK45/osu_soc/lib/files/gscl45nm.tlf' ...
+ read 31 cells in library 'gscl45nm' 
+*** End library_loading (cpu=0.00min, mem=0.3M, fe_cpu=0.04min, fe_mem=196.7M) ***
+Found empty module (Fixed_Point_Unit).
+Starting recursive module instantiation check.
+No recursion found.
+*****NEW dbFlattenCell is used.
+Flattening Cell LUMOS ...
+*** Netlist is unique.
+Set DBUPerIGU to techSite CoreSite width 760.
+** info: there are 37 modules.
+** info: there are 4032 stdCell insts.
+
+*** Memory Usage v0.144 (Current mem = 198.457M, initial mem = 62.277M) ***
+CTE reading timing constraint file 'LUMOS.sdc' ...
+INFO (CTE): constraints read successfully
+WARNING (CTE-25): Line: 8 of File LUMOS.sdc : Skipped unsupported command: set_units
+
+
+*** Read timing constraints (cpu=0:00:00.0 mem=202.1M) ***
+Total number of combinational cells: 25
+Total number of sequential cells: 4
+Total number of tristate cells: 2
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFX2 BUFX4
+Total number of usable buffers: 2
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INVX2 INVX1 INVX4 INVX8
+Total number of usable inverters: 4
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: CLKBUF1 CLKBUF2 CLKBUF3
+Total number of identified usable delay cells: 3
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+*info: set bottom ioPad orient R0
+Horizontal Layer M1 offset = 190 (guessed)
+Vertical Layer M2 offset = 190 (guessed)
+Suggestion: specify LAYER OFFSET in LEF file
+Reason: hard to extract LAYER OFFSET from standard cells
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF.
+Set Input Pin Transition Delay as 120 ps.
+**WARN: (SOCOPT-3465):	The buffer cells were automatically identified. The command setBufFootPrint is ignored. If you want to use this manual setting, rerun encounter with dbgGPSAutoCellFunction set to 0.
+**WARN: (SOCOPT-3466):	The inverter cells were automatically identified. The command setInvFootPrint is ignored. If you want to use this manual setting, rerun encounter with dbgGPSAutoCellFunction set to 0.
+**WARN: (SOCOPT-3467):	The delay cells were automatically identified. The command setDelayFootPrint is ignored. If you want to use this manual setting, rerun encounter with dbgGPSAutoCellFunction set to 0.
+<CMD> floorPlan -r 1.0 0.6 20 20 20 20
+Adjusting Core to Left to: 20.1400. Core to Bottom to: 20.1400.
+Horizontal Layer M1 offset = 190 (guessed)
+Vertical Layer M2 offset = 190 (guessed)
+Suggestion: specify LAYER OFFSET in LEF file
+Reason: hard to extract LAYER OFFSET from standard cells
+<CMD> addRing -spacing_bottom 5 -width_left 5 -width_bottom 5 -width_top 5 -spacing_top 5 -layer_bottom metal5 -width_right 5 -around core -center 1 -layer_top metal5 -spacing_right 5 -spacing_left 5 -layer_right metal6 -layer_left metal6 -nets { gnd vdd }
+
+
+The power planner created 8 wires.
+
+<CMD_INTERNAL> amoebaPlace
+**WARN: (SOCSP-9007):	The command 'amoebaPlace' is obsolete. It has been replaced by 'placeDesign'.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Extracting macro/IO cell pins and blockage ...... 
+Pin and blockage extraction finished
+*** Starting "NanoPlace(TM) placement v0.845 (mem=203.2M)" ...
+Options: ignoreSpare pinGuide gpeffort=medium 
+#std cell=4032 #block=0 (0 floating + 0 preplaced) #ioInst=0 #net=4007 #term=11658 #term/net=2.91, #fixedIo=0, #floatIo=0, #fixedPin=0, #floatPin=69
+stdCell: 4032 single + 0 double + 0 multi
+Total standard cell length = 4.1794 (mm), area = 0.0103 (mm^2)
+Design contains fractional cell.
+Average module density = 0.602.
+Density for the design = 0.602.
+       = stdcell_area 10998 (10323 um^2) / alloc_area 18285 (17162 um^2).
+Pin Density = 1.060.
+            = total # of pins 11658 / total Instance area 10998.
+Found multi-fanin net memoryData[31]
+Found multi-fanin net memoryData[30]
+Found multi-fanin net memoryData[29]
+Found multi-fanin net memoryData[28]
+Found multi-fanin net memoryData[27]
+Found multi-fanin net memoryData[26]
+Found multi-fanin net memoryData[25]
+Found multi-fanin net memoryData[24]
+Found multi-fanin net memoryData[23]
+Found multi-fanin net memoryData[22]
+......
+Found 32 (out of 4007) multi-fanin nets.
+Iteration  1: Total net bbox = 1.035e+04 (1.04e+04 0.00e+00)
+              Est.  stn bbox = 1.182e+04 (1.18e+04 0.00e+00)
+              cpu = 0:00:00.0 real = 0:00:01.0 mem = 203.3M
+Iteration  2: Total net bbox = 2.428e+04 (1.01e+04 1.42e+04)
+              Est.  stn bbox = 2.915e+04 (1.15e+04 1.76e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 203.3M
+Iteration  3: Total net bbox = 2.650e+04 (1.08e+04 1.57e+04)
+              Est.  stn bbox = 3.233e+04 (1.29e+04 1.95e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 203.3M
+Iteration  4: Total net bbox = 3.366e+04 (1.26e+04 2.11e+04)
+              Est.  stn bbox = 4.045e+04 (1.46e+04 2.58e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 203.3M
+Iteration  5: Total net bbox = 3.738e+04 (1.62e+04 2.12e+04)
+              Est.  stn bbox = 4.479e+04 (1.88e+04 2.60e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 203.3M
+Iteration  6: Total net bbox = 4.103e+04 (1.62e+04 2.48e+04)
+              Est.  stn bbox = 4.878e+04 (1.89e+04 2.99e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 203.3M
+Iteration  7: Total net bbox = 4.328e+04 (1.83e+04 2.50e+04)
+              Est.  stn bbox = 5.119e+04 (2.11e+04 3.01e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 203.5M
+Iteration  8: Total net bbox = 4.623e+04 (1.83e+04 2.79e+04)
+              Est.  stn bbox = 5.451e+04 (2.12e+04 3.33e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 203.5M
+Iteration  9: Total net bbox = 4.754e+04 (1.96e+04 2.79e+04)
+              Est.  stn bbox = 5.593e+04 (2.25e+04 3.34e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 203.5M
+Iteration 10: Total net bbox = 4.985e+04 (1.96e+04 3.02e+04)
+              Est.  stn bbox = 5.839e+04 (2.26e+04 3.58e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 203.6M
+Iteration 11: Total net bbox = 5.022e+04 (1.96e+04 3.06e+04)
+              Est.  stn bbox = 5.878e+04 (2.26e+04 3.62e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 203.7M
+Iteration 12: Total net bbox = 5.538e+04 (2.39e+04 3.15e+04)
+              Est.  stn bbox = 6.409e+04 (2.69e+04 3.71e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 203.7M
+*** cost = 5.538e+04 (2.39e+04 3.15e+04) (cpu for global=0:00:00.7) real=0:00:01.0***
+Design contains fractional cell.
+Starting refinePlace ...
+Placement tweakage begins.
+wire length = 5.540e+04 = 2.390e+04 H + 3.150e+04 V
+wire length = 5.176e+04 = 2.080e+04 H + 3.097e+04 V
+Placement tweakage ends.
+Statistics of distance of Instance movement in detailed placement:
+  maximum (X+Y) =        38.76 um
+  inst (U1356) with max move: (135.66, 104.12) -> (101.84, 99.18)
+  mean    (X+Y) =         3.30 um
+Total instances moved : 2679
+*** cpu=0:00:00.1   mem=203.5M  mem(used)=0.0M***
+Total net length = 5.191e+04 (2.084e+04 3.107e+04) (ext = 2.815e+03)
+*** End of Placement (cpu=0:00:00.8, real=0:00:02.0, mem=203.5M) ***
+Design contains fractional cell.
+default core: bins with density >  0.75 = 8.33 % ( 3 / 36 )
+Starting IO pin assignment...
+Completed IO pin assignment.
+<CMD> sroute -noBlockPins -noPadRings
+**WARN: (SOCSR-4053):	SRoute option "-noBlockPins" is obsolete and has been replaced by "-connect". The obsolete option still works in this release, but to avoid this warning and to ensure compatibility with future releases, update your script to use "-connect".
+**WARN: (SOCSR-4053):	SRoute option "-noPadRings" is obsolete and has been replaced by "-connect". The obsolete option still works in this release, but to avoid this warning and to ensure compatibility with future releases, update your script to use "-connect".
+No routing obstructions were found in the design.
+*** Begin SPECIAL ROUTE on Wed Jun  6 02:41:43 2018 ***
+Sroute/fcroute version 8.1.45 promoted on 09/01/2008.
+SPECIAL ROUTE ran on directory: /home/icic/Desktop/lumos
+SPECIAL ROUTE ran on machine: ICICVM.lab.edu (Linux 2.6.9-78.EL i686 3.29Ghz)
+
+Begin option processing ...
+(from .sroute_9360.conf) srouteConnectPowerBump set to false
+(from .sroute_9360.conf) routeSpecial set to true
+(from .sroute_9360.conf) srouteConnectBlockPin set to false
+(from .sroute_9360.conf) srouteFollowCorePinEnd set to 3
+(from .sroute_9360.conf) srouteJogControl set to "preferWithChanges differentLayer"
+(from .sroute_9360.conf) sroutePadPinAllPorts set to true
+(from .sroute_9360.conf) sroutePreserveExistingRoutes set to true
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 372.00 megs.
+
+Reading LEF technology information...
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 22 layers, 10 routing layers, 1 overlap layer
+Read in 33 macros, 25 used
+Read in 4032 components
+  4032 core components: 0 unplaced, 4032 placed, 0 fixed
+Read in 70 physical pins
+  70 physical pins: 0 unplaced, 70 placed, 0 fixed
+Read in 70 nets
+Read in 2 special nets, 2 routed
+Read in 8134 terminals
+Begin power routing ...
+**WARN: (SOCSR-1256):	Net vdd does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net vdd does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+**WARN: (SOCSR-1256):	Net gnd does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net gnd does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+CPU time for FollowPin 0 seconds
+CPU time for FollowPin 0 seconds
+  Number of IO ports routed: 0
+  Number of Stripe ports routed: 0
+  Number of Core ports routed: 108
+  Number of Followpin connections: 54
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 383.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 70 io pins ...
+ Updating DB with 20 via definition ...
+
+sroute post-processing starts at Wed Jun  6 02:41:43 2018
+The viaGen is rebuilding shadow vias for net gnd.
+sroute post-processing ends at Wed Jun  6 02:41:43 2018
+
+sroute post-processing starts at Wed Jun  6 02:41:43 2018
+The viaGen is rebuilding shadow vias for net vdd.
+sroute post-processing ends at Wed Jun  6 02:41:43 2018
+
+
+sroute: Total CPU time used = 0:0:0
+sroute: Total Real time used = 0:0:0
+sroute: Total Memory used = 1.52 megs
+sroute: Total Peak Memory used = 204.98 megs
+<CMD> trialRoute
+*** Starting trialRoute (mem=205.0M) ***
+
+There are 0 pin guide points passed to trialRoute.
+Options:  -noPinGuide
+
+routingBox: (0 0) (343140 342100)
+coreBox:    (40280 40280) (303140 302100)
+Number of multi-gpin terms=87, multi-gpins=179, moved blk term=0/0
+
+Phase 1a route (0:00:00.0 206.6M):
+Est net length = 5.794e+04um = 2.509e+04H + 3.284e+04V
+Usage: (11.3%H 14.0%V) = (2.924e+04um 5.707e+04um) = (30287 23179)
+Obstruct: 0 = 0 (0.0%H) + 0 (0.0%V)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1b route (0:00:00.0 207.8M):
+Usage: (11.3%H 14.0%V) = (2.918e+04um 5.707e+04um) = (30220 23179)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1c route (0:00:00.0 207.8M):
+Usage: (11.3%H 14.0%V) = (2.914e+04um 5.702e+04um) = (30181 23160)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1d route (0:00:00.0 207.8M):
+Usage: (11.3%H 14.0%V) = (2.914e+04um 5.702e+04um) = (30181 23160)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1e route (0:00:00.0 208.5M):
+Usage: (11.3%H 14.0%V) = (2.914e+04um 5.702e+04um) = (30181 23160)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Usage: (11.3%H 14.0%V) = (2.914e+04um 5.702e+04um) = (30181 23160)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Congestion distribution:
+
+Remain	cntH		cntV
+--------------------------------------
+--------------------------------------
+  2:	0	 0.00%	3	 0.03%
+  3:	0	 0.00%	116	 0.98%
+  4:	0	 0.00%	184	 1.55%
+  5:	0	 0.00%	286	 2.41%
+  6:	0	 0.00%	377	 3.18%
+  7:	0	 0.00%	560	 4.73%
+  8:	0	 0.00%	805	 6.79%
+  9:	0	 0.00%	1060	 8.95%
+ 10:	0	 0.00%	1258	10.62%
+ 11:	0	 0.00%	1240	10.46%
+ 12:	605	 5.11%	1680	14.18%
+ 13:	909	 7.67%	1641	13.85%
+ 14:	11	 0.09%	784	 6.62%
+ 15:	320	 2.70%	520	 4.39%
+ 16:	234	 1.97%	462	 3.90%
+ 17:	463	 3.91%	22	 0.19%
+ 18:	857	 7.23%	0	 0.00%
+ 19:	850	 7.17%	0	 0.00%
+ 20:	7601	64.14%	852	 7.19%
+
+
+*** Memory Usage v0.144 (Current mem = 211.496M, initial mem = 62.277M) ***
+Phase 1l route (0:00:00.0 207.5M):
+
+
+*** After '-updateRemainTrks' operation: 
+
+Usage: (11.6%H 14.6%V) = (2.995e+04um 5.920e+04um) = (31024 24042)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Congestion distribution:
+
+Remain	cntH		cntV
+--------------------------------------
+--------------------------------------
+  0:	0	 0.00%	2	 0.02%
+  1:	0	 0.00%	2	 0.02%
+  2:	0	 0.00%	6	 0.05%
+  3:	0	 0.00%	141	 1.19%
+  4:	0	 0.00%	210	 1.77%
+  5:	0	 0.00%	344	 2.90%
+  6:	0	 0.00%	403	 3.40%
+  7:	0	 0.00%	567	 4.78%
+  8:	0	 0.00%	812	 6.85%
+  9:	0	 0.00%	1013	 8.55%
+ 10:	0	 0.00%	1199	10.12%
+ 11:	0	 0.00%	1219	10.29%
+ 12:	605	 5.11%	1659	14.00%
+ 13:	909	 7.67%	1641	13.85%
+ 14:	15	 0.13%	779	 6.57%
+ 15:	327	 2.76%	517	 4.36%
+ 16:	244	 2.06%	462	 3.90%
+ 17:	488	 4.12%	22	 0.19%
+ 18:	894	 7.54%	0	 0.00%
+ 19:	869	 7.33%	0	 0.00%
+ 20:	7499	63.28%	852	 7.19%
+
+
+
+*** Completed Phase 1 route (0:00:00.1 205.9M) ***
+
+
+Total length: 6.173e+04um, number of vias: 23442
+M1(H) length: 8.082e+02um, number of vias: 11294
+M2(V) length: 2.397e+04um, number of vias: 10296
+M3(H) length: 2.462e+04um, number of vias: 1592
+M4(V) length: 1.050e+04um, number of vias: 135
+M5(H) length: 2.481e+02um, number of vias: 121
+M6(V) length: 1.577e+03um, number of vias: 3
+M7(H) length: 2.300e-01um, number of vias: 1
+M8(V) length: 9.050e-01um, number of vias: 0
+M9(H) length: 0.000e+00um, number of vias: 0
+M10(V) length: 0.000e+00um
+*** Completed Phase 2 route (0:00:00.1 207.9M) ***
+
+*** Finished all Phases (cpu=0:00:00.2 mem=207.9M) ***
+Peak Memory Usage was 211.5M 
+*** Finished trialRoute (cpu=0:00:00.2 mem=207.9M) ***
+
+<CMD> buildTimingGraph
+<CMD_INTERNAL> setCteReport
+WARNING: The reportTA command is obsolete. To generate a timing report that
+         provides information about the various paths in the design, use the
+         report_timing command.
+
+<CMD> report_timing  -nworst 10 -net -late  > timing.rep.1.placed
+Default RC Extraction called for design LUMOS.
+RCMode: Default
+Capacitance Scaling Factor   : 1.00000
+Coupling Cap. Scaling Factor : 1.00000
+Resistance Scaling Factor    : 1.00000
+Shrink Factor                : 1.00000
+Default RC extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Using detail cap. scale factor for clock nets.
+Default RC Extraction DONE (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  MEM: 210.957M)
+Calculate delays in Single mode...
+Topological Sorting (CPU = 0:00:00.0, MEM = 220.5M)
+Number of Loop : 0
+Start delay calculation (mem=220.480M)...
+**WARN: (SOCEXT-2882):	Unable to find resistance for via 'M3_M2_via' in capacitance table or LEF files. Check the capacitance table and LEF files. Assigning default value of 4.0 ohms.
+**WARN: (SOCEXT-2882):	Unable to find resistance for via 'M2_M1_via' in capacitance table or LEF files. Check the capacitance table and LEF files. Assigning default value of 4.0 ohms.
+**WARN: (SOCEXT-2882):	Unable to find resistance for via 'M4_M3_via' in capacitance table or LEF files. Check the capacitance table and LEF files. Assigning default value of 4.0 ohms.
+**WARN: (SOCEXT-2882):	Unable to find resistance for via 'M5_M4_via' in capacitance table or LEF files. Check the capacitance table and LEF files. Assigning default value of 4.0 ohms.
+**WARN: (SOCEXT-2882):	Unable to find resistance for via 'M6_M5_via' in capacitance table or LEF files. Check the capacitance table and LEF files. Assigning default value of 4.0 ohms.
+**WARN: (SOCEXT-2882):	Unable to find resistance for via 'M7_M6_via' in capacitance table or LEF files. Check the capacitance table and LEF files. Assigning default value of 4.0 ohms.
+**WARN: (SOCEXT-2882):	Unable to find resistance for via 'M8_M7_via' in capacitance table or LEF files. Check the capacitance table and LEF files. Assigning default value of 4.0 ohms.
+Delay calculation completed.
+(0:00:00.1 220.480M 0)
+*** CDM Built up (cpu=0:00:00.2  mem= 220.5M) ***
+*** reportTA (0:00:00.2) ***
+**ERROR: (SOCSYT-6692):	[encounter.tcl]: Invalid return code while executing "encounter.tcl"
+**ERROR: (SOCSYT-6693):	invalid command name "setIPOMode"
+<CMD> setLayerPreference hinst -isVisible 0
+<CMD> setLayerPreference fence -isVisible 0
+<CMD> setLayerPreference guide -isVisible 0
+<CMD> setLayerPreference obstruct -isVisible 0
+<CMD> setLayerPreference region -isVisible 0
+<CMD> setLayerPreference screen -isVisible 0
+<CMD> setLayerPreference inst -isVisible 0
+<CMD> setLayerPreference stdCell -isVisible 0
+<CMD> setLayerPreference coverCell -isVisible 0
+<CMD> setLayerPreference block -isVisible 0
+<CMD> setLayerPreference io -isVisible 0
+<CMD> setLayerPreference areaIo -isVisible 0
+<CMD> setLayerPreference net -isVisible 0
+<CMD> setLayerPreference power -isVisible 0
+<CMD> setLayerPreference term -isVisible 0
+<CMD> setLayerPreference ruler -isVisible 0
+<CMD> setLayerPreference text -isVisible 0
+<CMD> setLayerPreference relFPlan -isVisible 0
+<CMD> setLayerPreference yieldCell -isVisible 0
+<CMD> setLayerPreference yieldMap -isVisible 0
+<CMD> setLayerPreference sdpConnect -isVisible 0
+<CMD> setLayerPreference densityMap -isVisible 0
+<CMD> setLayerPreference hinst -isVisible 1
+<CMD> setLayerPreference fence -isVisible 1
+<CMD> setLayerPreference guide -isVisible 1
+<CMD> setLayerPreference obstruct -isVisible 1
+<CMD> setLayerPreference region -isVisible 1
+<CMD> setLayerPreference screen -isVisible 1
+<CMD> setLayerPreference inst -isVisible 1
+<CMD> setLayerPreference stdCell -isVisible 1
+<CMD> setLayerPreference coverCell -isVisible 1
+<CMD> setLayerPreference block -isVisible 1
+<CMD> setLayerPreference io -isVisible 1
+<CMD> setLayerPreference areaIo -isVisible 1
+<CMD> setLayerPreference net -isVisible 1
+<CMD> setLayerPreference power -isVisible 1
+<CMD> setLayerPreference term -isVisible 1
+<CMD> setLayerPreference ruler -isVisible 1
+<CMD> setLayerPreference text -isVisible 1
+<CMD> setLayerPreference relFPlan -isVisible 1
+<CMD> setLayerPreference yieldCell -isVisible 1
+<CMD> setLayerPreference yieldMap -isVisible 1
+<CMD> setLayerPreference sdpConnect -isVisible 1
+<CMD> setLayerPreference densityMap -isVisible 1
+<CMD> setLayerPreference hinst -isSelectable 0
+<CMD> setLayerPreference fence -isSelectable 0
+<CMD> setLayerPreference guide -isSelectable 0
+<CMD> setLayerPreference obstruct -isSelectable 0
+<CMD> setLayerPreference region -isSelectable 0
+<CMD> setLayerPreference screen -isSelectable 0
+<CMD> setLayerPreference inst -isSelectable 0
+<CMD> setLayerPreference stdCell -isSelectable 0
+<CMD> setLayerPreference coverCell -isSelectable 0
+<CMD> setLayerPreference block -isSelectable 0
+<CMD> setLayerPreference io -isSelectable 0
+<CMD> setLayerPreference areaIo -isSelectable 0
+<CMD> setLayerPreference net -isSelectable 0
+<CMD> setLayerPreference power -isSelectable 0
+<CMD> setLayerPreference term -isSelectable 0
+<CMD> setLayerPreference ruler -isSelectable 0
+<CMD> setLayerPreference text -isSelectable 0
+<CMD> setLayerPreference relFPlan -isSelectable 0
+<CMD> setLayerPreference yieldCell -isSelectable 0
+<CMD> setLayerPreference yieldMap -isSelectable 0
+<CMD> setLayerPreference sdpConnect -isSelectable 0
+<CMD> setLayerPreference densityMap -isSelectable 0
+<CMD> setLayerPreference hinst -isSelectable 1
+<CMD> setLayerPreference fence -isSelectable 1
+<CMD> setLayerPreference guide -isSelectable 1
+<CMD> setLayerPreference obstruct -isSelectable 1
+<CMD> setLayerPreference region -isSelectable 1
+<CMD> setLayerPreference screen -isSelectable 1
+<CMD> setLayerPreference inst -isSelectable 1
+<CMD> setLayerPreference stdCell -isSelectable 1
+<CMD> setLayerPreference coverCell -isSelectable 1
+<CMD> setLayerPreference block -isSelectable 1
+<CMD> setLayerPreference io -isSelectable 1
+<CMD> setLayerPreference areaIo -isSelectable 1
+<CMD> setLayerPreference net -isSelectable 1
+<CMD> setLayerPreference power -isSelectable 1
+<CMD> setLayerPreference term -isSelectable 1
+<CMD> setLayerPreference ruler -isSelectable 1
+<CMD> setLayerPreference text -isSelectable 1
+<CMD> setLayerPreference relFPlan -isSelectable 1
+<CMD> setLayerPreference yieldCell -isSelectable 1
+<CMD> setLayerPreference yieldMap -isSelectable 1
+<CMD> setLayerPreference sdpConnect -isSelectable 1
+<CMD> setLayerPreference densityMap -isSelectable 1
+<CMD> setLayerPreference hinst -isSelectable 0
+<CMD> setLayerPreference fence -isSelectable 0
+<CMD> setLayerPreference guide -isSelectable 0
+<CMD> setLayerPreference obstruct -isSelectable 0
+<CMD> setLayerPreference region -isSelectable 0
+<CMD> setLayerPreference screen -isSelectable 0
+<CMD> setLayerPreference inst -isSelectable 0
+<CMD> setLayerPreference stdCell -isSelectable 0
+<CMD> setLayerPreference coverCell -isSelectable 0
+<CMD> setLayerPreference block -isSelectable 0
+<CMD> setLayerPreference io -isSelectable 0
+<CMD> setLayerPreference areaIo -isSelectable 0
+<CMD> setLayerPreference net -isSelectable 0
+<CMD> setLayerPreference power -isSelectable 0
+<CMD> setLayerPreference term -isSelectable 0
+<CMD> setLayerPreference ruler -isSelectable 0
+<CMD> setLayerPreference text -isSelectable 0
+<CMD> setLayerPreference relFPlan -isSelectable 0
+<CMD> setLayerPreference yieldCell -isSelectable 0
+<CMD> setLayerPreference yieldMap -isSelectable 0
+<CMD> setLayerPreference sdpConnect -isSelectable 0
+<CMD> setLayerPreference densityMap -isSelectable 0
+<CMD> setLayerPreference hinst -isSelectable 1
+<CMD> setLayerPreference fence -isSelectable 1
+<CMD> setLayerPreference guide -isSelectable 1
+<CMD> setLayerPreference obstruct -isSelectable 1
+<CMD> setLayerPreference region -isSelectable 1
+<CMD> setLayerPreference screen -isSelectable 1
+<CMD> setLayerPreference inst -isSelectable 1
+<CMD> setLayerPreference stdCell -isSelectable 1
+<CMD> setLayerPreference coverCell -isSelectable 1
+<CMD> setLayerPreference block -isSelectable 1
+<CMD> setLayerPreference io -isSelectable 1
+<CMD> setLayerPreference areaIo -isSelectable 1
+<CMD> setLayerPreference net -isSelectable 1
+<CMD> setLayerPreference power -isSelectable 1
+<CMD> setLayerPreference term -isSelectable 1
+<CMD> setLayerPreference ruler -isSelectable 1
+<CMD> setLayerPreference text -isSelectable 1
+<CMD> setLayerPreference relFPlan -isSelectable 1
+<CMD> setLayerPreference yieldCell -isSelectable 1
+<CMD> setLayerPreference yieldMap -isSelectable 1
+<CMD> setLayerPreference sdpConnect -isSelectable 1
+<CMD> setLayerPreference densityMap -isSelectable 1
+<CMD> setLayerPreference guide -isVisible 0
+<CMD> setLayerPreference guide -isVisible 1
+<CMD> setLayerPreference guide -isVisible 0
+<CMD> setLayerPreference guide -isVisible 1
+<CMD> setLayerPreference fence -isVisible 0
+<CMD> setLayerPreference fence -isVisible 1
+<CMD> setLayerPreference hinst -isVisible 0
+<CMD> setLayerPreference hinst -isVisible 1
+<CMD> setLayerPreference stdCell -isVisible 0
+<CMD> setLayerPreference stdCell -isVisible 1
+<CMD> setLayerPreference stdCell -isVisible 0
+<CMD> setLayerPreference stdCell -isVisible 1
+<CMD> zoomSelected
+<CMD> fit
+<CMD> viewSnapshot -dir {/home/icic/Desktop/lumos } -view {fplan amoeba place }
+<CMD> createSnapshot -name snap
+Starting snapshot creation...
+<CMD> setLayerPreference hinst -isVisible 0
+<CMD> setLayerPreference fence -isVisible 0
+<CMD> setLayerPreference guide -isVisible 0
+<CMD> setLayerPreference obstruct -isVisible 0
+<CMD> setLayerPreference region -isVisible 0
+<CMD> setLayerPreference screen -isVisible 0
+<CMD> setLayerPreference inst -isVisible 0
+<CMD> setLayerPreference stdCell -isVisible 0
+<CMD> setLayerPreference coverCell -isVisible 0
+<CMD> setLayerPreference block -isVisible 0
+<CMD> setLayerPreference io -isVisible 0
+<CMD> setLayerPreference areaIo -isVisible 0
+<CMD> setLayerPreference net -isVisible 0
+<CMD> setLayerPreference power -isVisible 0
+<CMD> setLayerPreference term -isVisible 0
+<CMD> setLayerPreference ruler -isVisible 0
+<CMD> setLayerPreference text -isVisible 0
+<CMD> setLayerPreference relFPlan -isVisible 0
+<CMD> setLayerPreference yieldCell -isVisible 0
+<CMD> setLayerPreference yieldMap -isVisible 0
+<CMD> setLayerPreference sdpConnect -isVisible 0
+<CMD> setLayerPreference densityMap -isVisible 0
+<CMD> setLayerPreference hinst -isVisible 1
+<CMD> setLayerPreference fence -isVisible 1
+<CMD> setLayerPreference guide -isVisible 1
+<CMD> setLayerPreference obstruct -isVisible 1
+<CMD> setLayerPreference region -isVisible 1
+<CMD> setLayerPreference screen -isVisible 1
+<CMD> setLayerPreference inst -isVisible 1
+<CMD> setLayerPreference stdCell -isVisible 1
+<CMD> setLayerPreference coverCell -isVisible 1
+<CMD> setLayerPreference block -isVisible 1
+<CMD> setLayerPreference io -isVisible 1
+<CMD> setLayerPreference areaIo -isVisible 1
+<CMD> setLayerPreference net -isVisible 1
+<CMD> setLayerPreference power -isVisible 1
+<CMD> setLayerPreference term -isVisible 1
+<CMD> setLayerPreference ruler -isVisible 1
+<CMD> setLayerPreference text -isVisible 1
+<CMD> setLayerPreference relFPlan -isVisible 1
+<CMD> setLayerPreference yieldCell -isVisible 1
+<CMD> setLayerPreference yieldMap -isVisible 1
+<CMD> setLayerPreference sdpConnect -isVisible 1
+<CMD> setLayerPreference densityMap -isVisible 1
+<CMD> setLayerPreference hinst -isVisible 0
+<CMD> setLayerPreference fence -isVisible 0
+<CMD> setLayerPreference guide -isVisible 0
+<CMD> setLayerPreference obstruct -isVisible 0
+<CMD> setLayerPreference region -isVisible 0
+<CMD> setLayerPreference screen -isVisible 0
+<CMD> setLayerPreference inst -isVisible 0
+<CMD> setLayerPreference stdCell -isVisible 0
+<CMD> setLayerPreference coverCell -isVisible 0
+<CMD> setLayerPreference block -isVisible 0
+<CMD> setLayerPreference io -isVisible 0
+<CMD> setLayerPreference areaIo -isVisible 0
+<CMD> setLayerPreference net -isVisible 0
+<CMD> setLayerPreference power -isVisible 0
+<CMD> setLayerPreference term -isVisible 0
+<CMD> setLayerPreference ruler -isVisible 0
+<CMD> setLayerPreference text -isVisible 0
+<CMD> setLayerPreference relFPlan -isVisible 0
+<CMD> setLayerPreference yieldCell -isVisible 0
+<CMD> setLayerPreference yieldMap -isVisible 0
+<CMD> setLayerPreference sdpConnect -isVisible 0
+<CMD> setLayerPreference densityMap -isVisible 0
+<CMD> setLayerPreference hinst -isVisible 1
+<CMD> setLayerPreference fence -isVisible 1
+<CMD> setLayerPreference guide -isVisible 1
+<CMD> setLayerPreference obstruct -isVisible 1
+<CMD> setLayerPreference region -isVisible 1
+<CMD> setLayerPreference screen -isVisible 1
+<CMD> setLayerPreference inst -isVisible 1
+<CMD> setLayerPreference stdCell -isVisible 1
+<CMD> setLayerPreference coverCell -isVisible 1
+<CMD> setLayerPreference block -isVisible 1
+<CMD> setLayerPreference io -isVisible 1
+<CMD> setLayerPreference areaIo -isVisible 1
+<CMD> setLayerPreference net -isVisible 1
+<CMD> setLayerPreference power -isVisible 1
+<CMD> setLayerPreference term -isVisible 1
+<CMD> setLayerPreference ruler -isVisible 1
+<CMD> setLayerPreference text -isVisible 1
+<CMD> setLayerPreference relFPlan -isVisible 1
+<CMD> setLayerPreference yieldCell -isVisible 1
+<CMD> setLayerPreference yieldMap -isVisible 1
+<CMD> setLayerPreference sdpConnect -isVisible 1
+<CMD> setLayerPreference densityMap -isVisible 1
+
+*** Memory Usage v0.144 (Current mem = 223.031M, initial mem = 62.277M) ***
+--- Ending "First Encounter" (totcpu=0:00:06.2, real=0:03:53, mem=223.0M) ---

@@ -1,0 +1,41 @@
+Loading db file '/home/icic/FreePDK45/osu_soc/lib/files/gscl45nm.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+Warning: Design has unannotated black-box outputs. (PWR-428)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : LUMOS
+Version: C-2009.06-SP5
+Date   : Wed Jun  6 02:40:33 2018
+****************************************
+
+
+Library(s) Used:
+
+    gscl45nm (File: /home/icic/FreePDK45/osu_soc/lib/files/gscl45nm.db)
+
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   2.2655 mW   (74%)
+  Net Switching Power  = 815.6647 uW   (26%)
+                         ---------
+Total Dynamic Power    =   3.0812 mW  (100%)
+
+Cell Leakage Power     =  56.2227 uW
+
+1

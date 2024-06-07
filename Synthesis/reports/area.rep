@@ -1,0 +1,27 @@
+Warning: Design 'LUMOS' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : area
+Design : LUMOS
+Version: C-2009.06-SP5
+Date   : Wed Jun  6 02:40:33 2018
+****************************************
+
+Library(s) Used:
+
+    gscl45nm (File: /home/icic/FreePDK45/osu_soc/lib/files/gscl45nm.db)
+
+Number of ports:               70
+Number of nets:              4150
+Number of cells:             3907
+Number of references:          28
+
+Combinational area:       8071.490544
+Noncombinational area:    3447.947055
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:          11519.437599
+Total area:                 undefined
+
+Information: This design contains black box (unknown) components. (RPT-8)
+1
