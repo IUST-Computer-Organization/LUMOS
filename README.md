@@ -14,6 +14,14 @@
 
 - The processor is designed with modularity in mind, allowing students to work on various components of the processor. As part of their course projects, students will design different execution units, such as FPUs, control units, memory interfaces, and other modules that are integral to the processor's functionality.
 
+## LUMOS Datapath
+
+In a multicycle implementation, we can break down each instruction into a series of steps corresponding to the functional unit operations that are needed. These steps can be used to create a multi-cycle implementation. In this architecture, each step will take 1 clock cycle. This allows that components in the design and different functional units to be used more than once per instruction, as long as it is used on different clock cycles. This sharing of resources can help reduce the amount of hardware required. This classic view of CPU design partitions the design of a processor into data path design and control design. Data path design focuses on the design of ALU and other functional units as well as accessing the registers and memory. Control path design focuses on the design of the state machines to decode instructions and generate the sequence of control signals necessary to appropriately manipulate the data path.
+
+![Alt text](https://github.com/IUST-Computer-Organization/LUMOS/blob/main/Images/Datapath_1.png "LUMOS Datapath Section 1")
+![Alt text](https://github.com/IUST-Computer-Organization/LUMOS/blob/main/Images/Datapath_2.png "LUMOS Datapath Section 2")
+![Alt text](https://github.com/IUST-Computer-Organization/LUMOS/blob/main/Images/Datapath_3.png "LUMOS Datapath Section 3")
+
 ## Synthesis
 
 This processor core is synthesizable in the 45nm CMOS technology node. LUMOS has gone through the RTL-to-GDS flow using *Synopsys Design Compiler* and *Cadence SoC Encounter* tools. At this node, the core can achieve a frequency of **500MHz** while occupying **12000um2** of area and consuming around **3mw** of power.
