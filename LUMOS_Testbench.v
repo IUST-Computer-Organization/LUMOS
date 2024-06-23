@@ -11,7 +11,7 @@
 `timescale 1 ns / 1 ns
 
 `include "Defines.vh"
-`include "syn.v"
+`include "LUMOS.v"
 
 `ifndef FIRMWARE
     `define FIRMWARE "Firmware\\Firmware.hex"
