@@ -42,7 +42,34 @@ module Fixed_Point_Unit
 
         /*
          *  Describe Your Square Root Calculator Circuit Here.
-         */
+         *
+         module sqrt16 (
+    input [15:0] radicand,
+    output [7:0] root
+);
+    reg [15:0] remainder;
+    reg [7:0] root_reg;
+    reg [3:0] i;
+    
+    always @(*) begin
+        remainder = 0;
+        root_reg = 0;
+        for (i = 4'hF; i >= 0; i = i - 1) begin
+            root_reg = {root_reg[6:0], 1'b1};
+            if (remainder >= (root_reg << 1)) begin
+                remainder = remainder - (root_reg << 1);
+                root_reg = root_reg + 1;
+            end else begin
+                root_reg = root_reg - 1;
+            end
+            root_reg = root_reg >> 1;
+            remainder = (remainder << 2) | (radicand >> (i * 2) & 2'b11);
+        end
+    end
+    
+    assign root = root_reg;
+endmodule
+/
 
     // ------------------ //
     // Multiplier Circuit //
@@ -69,6 +96,26 @@ module Fixed_Point_Unit
         /*
          *  Describe Your 32-bit Multiplier Circuit Here.
          */
+         module Multiplier32
+         (
+            input wire [31:0] operand_1,
+            input wire  [31:0] operand_2,
+            output reg [63:0] product
+          );
+       wire [31:0] product0, product1, product2, product3;
+       wire [31:0] operand_1_high = operand_1[31:16];
+       wire [31:0] operand_1_low = operand_1[15:0];
+       wire [31:0] operand_2_high = operand_2[31:16];
+       wire [31:0] operand_2_low = operand_2[15:0];
+    
+    
+    Multiplier m1 (.operand_1(operand_1_low), .operand_2(operand_2_low), .product(product0));     
+    Multiplier m2 (.operand_1(operand_1_high), .operand_2(oprand2_low), .product(product1));  
+    Multiplier m3 (.operand_1(operand_1_low), .operand_2(operand_2_high), .product(product2));   
+    Multiplier m4 (.operand_1(operand_1_high), .operand_2(operand_2_high), .product(product3));  
+    
+
+endmodule 
          
 endmodule
 
