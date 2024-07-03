@@ -49,12 +49,12 @@ module Register_File
 
     always @(*) 
     begin
-        if (read_enable_1 == 1'b1 && read_index_1 != {DEPTH{1'bz}})
+        if (read_enable_1 == 1'b1)
             read_data_1 <= Registers[read_index_1];
         else
             read_data_1 <= {WIDTH{1'bz}};
 
-        if (read_enable_2 == 1'b1 && read_index_2 != {DEPTH{1'bz}})
+        if (read_enable_2 == 1'b1)
             read_data_2 <= Registers[read_index_2];
         else
             read_data_2 <= {WIDTH{1'bz}};

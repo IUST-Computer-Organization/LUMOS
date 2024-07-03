@@ -1,48 +1,186 @@
-<img src="https://github.com/IUST-Computer-Organization/.github/blob/main/images/CompOrg_orange.png" alt="Image" width="85" height="85" style="vertical-align:middle"> LUMOS RISC-V
-=================================
-> Light Utilization with Multicycle Operational Stages (LUMOS) RISC-V Processor Core
 
-<div align="justify">
+# Computer Organization - Spring 2024 - IUST
+==============================================================
+## Assembly Assignment 2
 
-## Introduction
+### Project Contributors
 
-**LUMOS** is a multicycle RISC-V processor that implements a subset of `RV32I` instruction set, designed for educational use in computer organization classes at **Iran University of Science and Technology**. It allows for modular design projects, enabling students to gain hands-on experience with processor architecture.
+- Student Name : Yazdan Seyed Babaei
+- Team Members: Yazdan Seyed babaei - Amirmohhammad jamshidi
+- Student ID: 400412328
+- Date: 13/04/1403
 
-## Features
+# LUMOS RISC-V Processor with Fixed-Point Unit
 
-- LUMOS executes instructions in multiple stages, such as `instruction_fetch`, `fetch_wait`, `fetch_done`, `decode`, `execute`, `memory_access`, and etc. This approach allows for more complex operations and better utilization of processor resources compared to single-cycle designs. This processor does not support the entire `RV32I` instruction set, which is the base integer instruction set of RISC-V. Instead, it focuses on a subset of instructions that are essential for educational purposes and demonstrating the principles of computer architecture.
+## Project Overview
 
-- The processor is designed with modularity in mind, allowing students to work on various components of the processor. As part of their course projects, students will design different execution units, such as FPUs, control units, memory interfaces, and other modules that are integral to the processor's functionality.
+This project aims to study the multi-cycle implementation of a RISC-V processor, specifically adding a fixed-point arithmetic unit. The processor is designed to execute RISC-V assembly code to calculate the distance between points on a map.
 
-## LUMOS Datapath
+### Key Components:
+- **LUMOS RISC-V Core:** Multi-cycle implementation of a subset of the 32-bit base integer ISA of RISC-V.
+- **Fixed-Point Unit (FPU):** Adds support for fixed-point arithmetic operations including addition, subtraction, multiplication, and square root.
 
-In a multicycle implementation, we can break down each instruction into a series of steps corresponding to the functional unit operations that are needed. These steps can be used to create a multi-cycle implementation. In this architecture, each step will take 1 clock cycle. This allows that components in the design and different functional units to be used more than once per instruction, as long as it is used on different clock cycles. This sharing of resources can help reduce the amount of hardware required. This classic view of CPU design partitions the design of a processor into data path design and control design. Data path design focuses on the design of ALU and other functional units as well as accessing the registers and memory. Control path design focuses on the design of the state machines to decode instructions and generate the sequence of control signals necessary to appropriately manipulate the data path.
+## Repository Structure
 
-![Alt text](https://github.com/IUST-Computer-Organization/LUMOS/blob/main/Images/Datapath_1.png "LUMOS Datapath Section 1")
-![Alt text](https://github.com/IUST-Computer-Organization/LUMOS/blob/main/Images/Datapath_2.png "LUMOS Datapath Section 2")
-![Alt text](https://github.com/IUST-Computer-Organization/LUMOS/blob/main/Images/Datapath_3.png "LUMOS Datapath Section 3")
+- `LUMOS.v`: Top module where the datapath and controller are located.
+- `Fixed_Point_Unit.v`: Module implementing the fixed-point arithmetic operations.
+- `Fixed_Point_Unit_Testbench.v`: Testing environment for the FPU.
+- `Firmware/Assembly.S`: Assembly code for calculating distances.
 
-## Synthesis
+## Fixed-Point Unit Description
 
-This processor core is synthesizable in the 45nm CMOS technology node. LUMOS has gone through the RTL-to-GDS flow using *Synopsys Design Compiler* and *Cadence SoC Encounter* tools. At this node, the core can achieve a frequency of **500MHz** while occupying **12000um2** of area and consuming around **3mw** of power.
-</div>
+### FPU Operations
+- **Addition and Subtraction:** Directly performed on the operands.
+- **Multiplication:** Implemented using a 16-bit multiplier to handle 32-bit operands in multiple stages.
+- **Square Root:** Utilizes a digit-by-digit approach to calculate the square root of fixed-point numbers.
 
-<!-- ![Alt text](https://github.com/IUST-Computer-Organization/LUMOS/blob/main/LUMOS.png "The LUMOS microprocessor synthesized with Design Compiler and placed and routed by Cadence Encounter" =300x300)  -->
+### Code Explanation
 
-<picture>
-    <img 
-        alt="The LUMOS microprocessor synthesized with Design Compiler and placed and routed by Cadence Encounter" 
-        src="https://github.com/IUST-Computer-Organization/LUMOS/blob/main/Images/LUMOS.png"
-        width="550" 
-        height="550"
-    > 
-</picture> 
+#### Fixed_Point_Unit Module
+```verilog
+module Fixed_Point_Unit 
+#(
+    parameter WIDTH = 32,
+    parameter FBITS = 10
+)
+(
+    input wire clk,
+    input wire reset,
+    
+    input wire [WIDTH - 1 : 0] operand_1,
+    input wire [WIDTH - 1 : 0] operand_2,
+    
+    input wire [ 1 : 0] operation,
 
+    output reg [WIDTH - 1 : 0] result,
+    output reg ready
+);
 
-## Copyright
+// Operation handling
+always @(*)
+begin
+    case (operation)
+        `FPU_ADD    : begin result = operand_1 + operand_2; ready = 1; end
+        `FPU_SUB    : begin result = operand_1 - operand_2; ready = 1; end
+        `FPU_MUL    : begin result = product[WIDTH + FBITS - 1 : FBITS]; ready = product_ready; end
+        `FPU_SQRT   : begin result = root; ready = root_ready; end
+        default     : begin result = 'bz; ready = 0; end
+    endcase
+end
 
-Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+// Reset handling
+always @(posedge reset)
+begin
+    if (reset)  ready = 0;
+    else        ready = 'bz;
+end
 
-Copyright 2024 Iran University of Science and Technology - iustCompOrg@gmail.com  
+// Square Root Circuit
+// ...
+```
+#### Multiplication Circuit
+```verilog
+reg [64 - 1 : 0] product;
+reg product_ready;
 
-</div>
+reg [15 : 0] multiplierCircuitInput1;
+reg [15 : 0] multiplierCircuitInput2;
+wire [31 : 0] multiplierCircuitResult;
+
+Multiplier multiplier_circuit
+(
+    .operand_1(multiplierCircuitInput1),
+    .operand_2(multiplierCircuitInput2),
+    .product(multiplierCircuitResult)
+);
+
+// Partial Products
+reg [31 : 0] partialProduct1;
+reg [31 : 0] partialProduct2;
+reg [31 : 0] partialProduct3;
+reg [31 : 0] partialProduct4;
+
+reg [2 : 0] multiplication_stage;
+reg [2 : 0] next_multiplication_stage;
+
+always @(posedge clk) 
+begin
+    if (operation == `FPU_MUL)  multiplication_stage <= next_multiplication_stage;
+    else                        multiplication_stage <= 'b0;
+end
+
+always @(*) 
+begin
+    next_multiplication_stage <= 'bz;
+    case (multiplication_stage)
+        3'b000 :
+        begin
+            product_ready <= 0;
+
+            multiplierCircuitInput1 <= 'bz;
+            multiplierCircuitInput2 <= 'bz;
+
+            partialProduct1 <= 'bz;
+            partialProduct2 <= 'bz;
+            partialProduct3 <= 'bz;
+            partialProduct4 <= 'bz;
+
+            next_multiplication_stage <= 3'b001;
+        end 
+        3'b001 : 
+        begin
+            multiplierCircuitInput1 <= operand_1[15 : 0];
+            multiplierCircuitInput2 <= operand_2[15 : 0];
+            partialProduct1 <= multiplierCircuitResult;
+            next_multiplication_stage <= 3'b010;
+        end
+        3'b010 : 
+        begin
+            multiplierCircuitInput1 <= operand_1[31 : 16];
+            multiplierCircuitInput2 <= operand_2[15 : 0];
+            partialProduct2 <= multiplierCircuitResult;
+            next_multiplication_stage <= 3'b011;
+        end
+        3'b011 : 
+        begin
+            multiplierCircuitInput1 <= operand_1[15 : 0];
+            multiplierCircuitInput2 <= operand_2[31 : 16];
+            partialProduct3 <= multiplierCircuitResult;
+            next_multiplication_stage <= 3'b100;
+        end
+        3'b100 : 
+        begin
+            multiplierCircuitInput1 <= operand_1[31 : 16];
+            multiplierCircuitInput2 <= operand_2[31 : 16];
+            partialProduct4 <= multiplierCircuitResult;
+            next_multiplication_stage <= 3'b101;
+        end
+        3'b101 :
+        begin
+            product <= partialProduct1 + (partialProduct2 << 16) + (partialProduct3 << 16) + (partialProduct4 << 32);
+            next_multiplication_stage <= 3'b000;
+            product_ready <= 1;
+        end
+
+        default: next_multiplication_stage <= 3'b000;
+    endcase    
+end
+```
+
+### Multiplier Module
+```verilog
+module Multiplier
+(
+    input wire [15 : 0] operand_1,
+    input wire [15 : 0] operand_2,
+
+    output reg [31 : 0] product
+);
+
+    always @(*)
+    begin
+        product <= operand_1 * operand_2;
+    end
+endmodule
+```
+
