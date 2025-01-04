@@ -32,7 +32,7 @@ This processor core is synthesizable in the 45nm CMOS technology node. LUMOS has
 <picture>
     <img 
         alt="The LUMOS microprocessor synthesized with Design Compiler and placed and routed by Cadence Encounter" 
-        src="https://github.com/IUST-Computer-Organization/.github/blob/main/images/LUMOS.png" 
+        src="https://github.com/IUST-Computer-Organization/LUMOS/blob/main/Images/LUMOS.png"
         width="550" 
         height="550"
     > 
