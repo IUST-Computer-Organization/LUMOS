@@ -11,7 +11,7 @@
 `timescale 1 ns / 1 ns
 
 `include "Defines.vh"
-`include "syn.v"
+`include "LUMOS.v"
 
 `ifndef FIRMWARE
     `define FIRMWARE "Firmware\\Firmware.hex"
@@ -24,6 +24,41 @@
 
 module LUMOS_Testbench;
     
+    /////////////////////////////
+    // Multiplier Verification //
+    /////////////////////////////
+    reg  [ 7 : 0] test_operand_1;
+    reg  [ 7 : 0] test_operand_2;
+    wire [15 : 0] test_product;
+
+    Multiplier multiplier_8bit
+    (
+        .operand_1(test_operand_1),
+        .operand_2(test_operand_2),
+        .product(test_product)
+    );
+
+    integer i;
+    integer j;
+
+    initial
+    begin
+        for (i = 0; i < 255; i = i + 1)
+        begin
+            for (j = 0; j < 255; j = j + 1)
+            begin
+                test_operand_1 = i;
+                test_operand_2 = j;
+                #1;
+                if (test_product != i * j)
+                begin
+                    $display("\n\n\tMultiplier Verification Failed.\n\n");
+                    $finish;
+                end
+            end
+        end
+    end
+
     //////////////////////
     // Clock Generation //
     //////////////////////
@@ -147,6 +182,8 @@ module LUMOS_Testbench;
         if (trap == `ENABLE)
             reset <= `ENABLE;    
         repeat (100) @(posedge clk);
+        
+        $display("\n\n\tExecution Finished.\n\n");
         $finish;
     end
 
